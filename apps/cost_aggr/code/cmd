@@ -1,0 +1,70 @@
+#!/bin/bash
+# change input dataset in array "dataset" and path "DATA..."
+# change tesing count in var "seqcount"
+# change number of iterations in "simtime"
+# change number of thrs in array "thrsset_MC" "thrsset_D6" "thrsset_N8"
+# store timing data in "RESULT"
+
+
+# ----- dataset loop begin -----
+
+#dataset=(cones teddy tsukuba venus)
+dataset=(tsukuba)
+#wnd_set=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16)
+wnd_set=(1)
+aggr_set=(3) # three different aggregation methods
+#---------------outer-most loop--------------------
+for aggr in ${aggr_set[@]}; do
+
+case $aggr in
+1)
+   RAW="dat_block"
+   ;;
+2)
+   RAW="dat_aw"
+   ;;
+3)
+   RAW="dat_cross"
+   ;;
+esac
+
+if [ -f ./$RAW ]; then rm ./$RAW; fi
+
+echo -e -n '\t'  >> $RAW
+
+for ws in ${wnd_set[@]}; do
+	echo -e -n $(($ws * 2 + 1))x$(($ws * 2 + 1))  '\t' >> $RAW
+done
+echo >> $RAW
+
+
+for name_set in ${dataset[@]}; do
+  echo -n -e ${name_set} '\t' >> $RAW
+  lf_image=../stereo-pairs/${name_set}/imL.png
+  rt_image=../stereo-pairs/${name_set}/imR.png
+  #echo $DATA
+
+  # ----- nomal 8-core begin ------
+  #RESULT=./cfd.result.ep/unroll_cfd_N8_${name_set}_${today}_${RAW}
+  #if [ -f ./$RAW ]; then rm ./$RAW; fi
+  #if [ -f ./N_THRS ]; then rm ./N_THRS; fi
+  #if [ -f $RESULT ]; then rm $RESULT; fi
+
+  for ws in ${wnd_set[@]}; do
+#    echo $n_thrs >> N_THRS
+#    for ((seq=1; seq<=$seqcount; seq++)); do
+#      prun -v -np 1 ./euler3d_cpu $DATA $n_thrs
+      ./block_match  ${lf_image} ${rt_image} 16 1 0 $aggr 0 5 5 out $ws 1
+#    done
+    #echo '2*$th' >> $RAW
+  done
+  echo >> $RAW
+  #paste -d" " N_THRS $RAW > TEMP
+  #mv TEMP $RESULT
+  # ----- nomal 8-core end -----
+
+done
+# -----outermost loop end -----
+done
+# ----- make clean -----
+#make clean

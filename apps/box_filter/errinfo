@@ -1,0 +1,22 @@
+:73:17: warning: expression result unused
+            for(iOffsetX; iOffsetX < iLimit; iOffsetX++)
+                ^~~~~~~~
+:278:29: warning: passing 'uchar4 const __attribute__((address_space(1))) *' to parameter of type 'uchar4 __attribute__((address_space(1))) *' discards qualifiers
+        _clMemWriteBRO_FCTH(uc4Source, uiWidth, uiHeight, 0, iRadius, uc4LocalData, 0);
+                            ^~~~~~~~~
+:129:44: note: passing argument to parameter 'in' here
+void _clMemWriteBRO_FCTH(__global uchar4 * in, uint w, uint h, uint base_addr, int r, __local uchar4 * cache, uint p)
+                                           ^
+:289:17: warning: expression result unused
+            for(iOffsetX; iOffsetX < iLimit; iOffsetX++)
+                ^~~~~~~~
+:299:20: error: use of undeclared identifier 't_idx_y'
+            uiDest[t_idx_y * uiWidth + t_idx_x] = rgbaFloat4ToUint(f4Sum, fScale);
+                   ^
+:299:28: error: expected ']'
+            uiDest[t_idx_y * uiWidth + t_idx_x] = rgbaFloat4ToUint(f4Sum, fScale);
+                           ^
+:299:19: note: to match this '['
+            uiDest[t_idx_y * uiWidth + t_idx_x] = rgbaFloat4ToUint(f4Sum, fScale);
+                  ^
+

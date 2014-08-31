@@ -1,0 +1,10 @@
+:278:15: warning: passing 'float const __attribute__((address_space(1))) *' to parameter of type 'float __attribute__((address_space(1))) *' discards qualifiers
+                        _clWriteLM(raw_cost, cdim, rdim, offset_x, offset_y, cacher, length_x, length_y, d);
+                                   ^~~~~~~~
+:215:34: note: passing argument to parameter 'gl_data' here
+void _clWriteLM(__global float * gl_data, int cdim, int rdim, int offset_x, int offset_y, __local float * cacher, int length_x, int length_y, int d){
+                                 ^
+:312:12: error: use of undeclared identifier 'CL_LOCAL_MEM_FENCE'
+                        barrier(CL_LOCAL_MEM_FENCE);
+                                ^
+

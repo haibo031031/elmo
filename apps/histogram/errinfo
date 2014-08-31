@@ -1,0 +1,7 @@
+:214:94: error: too many arguments to function call, expected 4, have 5
+    _clLMReductionBlocked(sharedArray, &(binResult[groupId * bins]), bins * groupSize, bins, 0);
+    ~~~~~~~~~~~~~~~~~~~~~                                                                    ^
+:249:94: error: too many arguments to function call, expected 4, have 5
+    _clLMReductionBlocked(sharedArray, &(binResult[groupId * bins]), bins * groupSize, bins, 0);
+    ~~~~~~~~~~~~~~~~~~~~~                                                                    ^
+
