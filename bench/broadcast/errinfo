@@ -1,0 +1,4 @@
+:56:13: error: use of undeclared identifier 'CL_LOCAL_MEM_FENCE'
+                                barrier(CL_LOCAL_MEM_FENCE);
+                                        ^
+

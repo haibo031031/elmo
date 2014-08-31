@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+dataset=(51200 102400 204800 409600 819200 1638400)
+  for size in ${dataset[@]}; do
+
+      ./reduction  $size 256
+
+  done
+

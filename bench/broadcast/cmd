@@ -1,0 +1,19 @@
+#!/bin/bash
+# change input dataset in array "dataset" and path "DATA..."
+# change tesing count in var "seqcount"
+# change number of iterations in "simtime"
+# change number of thrs in array "thrsset_MC" "thrsset_D6" "thrsset_N8"
+# store timing data in "RESULT"
+
+
+# ----- dataset loop begin -----
+
+dataset=(128 256 512 1024 2048 4096)
+
+
+  for size in ${dataset[@]}; do
+
+      ./broadcast  $size
+
+  done
+

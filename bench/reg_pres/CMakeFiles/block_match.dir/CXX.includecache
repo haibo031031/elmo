@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cambine/Dropbox/stereo_app/local_memory/micro/reg_pres/CLHelper.h
+CL/cl.h
+-
+vector
+-
+iostream
+-
+fstream
+-
+string
+-
+
+/home/cambine/Dropbox/stereo_app/local_memory/micro/reg_pres/Main.cpp
+stdlib.h
+-
+stdio.h
+-
+CLHelper.h
+/home/cambine/Dropbox/stereo_app/local_memory/micro/reg_pres/CLHelper.h
+util.h
+/home/cambine/Dropbox/stereo_app/local_memory/micro/reg_pres/util.h
+
+/home/cambine/Dropbox/stereo_app/local_memory/micro/reg_pres/util.h
+math.h
+-
+iostream
+-
+omp.h
+-
+sys/time.h
+-
+

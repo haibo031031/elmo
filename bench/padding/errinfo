@@ -1,0 +1,7 @@
+:15:9: error: use of undeclared identifier 't_l_idx'
+        cacher[t_l_idx] = (float)t_lc_idx;
+               ^
+:38:9: error: use of undeclared identifier 't_l_idx'
+        cacher[t_l_idx] = (float)t_lc_idx;
+               ^
+

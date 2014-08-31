@@ -1,0 +1,1 @@
+/home/cambine/Dropbox/stereo_app/local_memory/micro/reg_pres/CMakeFiles/block_match.dir

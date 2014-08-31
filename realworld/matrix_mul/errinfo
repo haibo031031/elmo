@@ -1,0 +1,8 @@
+:16:18: error: use of undeclared identifier 'wg_y'; did you mean 'wg_x'?
+        uint length_y = wg_y + 2 * r;
+                        ^~~~
+                        wg_x
+:12:7: note: 'wg_x' declared here
+        uint wg_x = get_local_size(0);
+             ^
+

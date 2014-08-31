@@ -1,0 +1,13 @@
+:6:9: error: use of undeclared identifier 'size'
+        if(idx<size)
+               ^
+:11:18: error: use of undeclared identifier 'size'
+                for(int i=0; i<size; i++)
+                               ^
+:27:13: error: use of undeclared identifier 'size'
+        if(t_g_idx<size)
+                   ^
+:32:18: error: use of undeclared identifier 'size'
+                for(int i=0; i<size; i=i+tile)
+                               ^
+

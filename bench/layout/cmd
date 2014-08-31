@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+dataset=(8 16 32 64 128 256)
+  for size in ${dataset[@]}; do
+
+      ./layout $size 20480
+
+  done
+
